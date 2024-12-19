@@ -105,19 +105,9 @@ jobs:
 
     - name: Clone device tree
       run: |
-        git clone ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }}
+        git clone ${{ github.event.inputs.DEVICE_TREE_URL }} 
+        git clone https://github.com/transsion-mt6789/twrp-device_transsion_mt6789-common.git -b fox_12.1 device/transsion/mt6789-common
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
-
-    - name: Archive Full Recovery Source
-      run: |
-        tar -czvf recovery_source.tar.gz *
-      working-directory: ${{ steps.pwd.outputs.workspace-folder }}
-
-    - name: Upload Full Recovery Source
-      uses: actions/upload-artifact@v3
-      with:
-        name: recovery_source_code
-        path: workspace/recovery_source.tar.gz
 
     - name: Building recovery
       run: |
