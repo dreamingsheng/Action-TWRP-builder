@@ -114,7 +114,8 @@ jobs:
         export CCACHE_DIR=~/ccache
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch 
+        breakfast
+        lunch aosp_arm64-eng
         make clean 
         make recoveryimage -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
