@@ -114,7 +114,6 @@ jobs:
         export CCACHE_DIR=~/ccache
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        breakfast
         lunch aosp_arm64-eng
         make clean 
         make recoveryimage -j$(nproc --all)
