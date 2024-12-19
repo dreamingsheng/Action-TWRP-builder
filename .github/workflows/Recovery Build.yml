@@ -105,7 +105,7 @@ jobs:
 
     - name: Clone device tree
       run: |
-        git clone ${{ github.event.inputs.DEVICE_TREE_URL }} 
+        git clone https://github.com/transsion-mt6789-recovery/twrp-device_tecno_TECNO-LI7
         git clone https://github.com/transsion-mt6789/twrp-device_transsion_mt6789-common.git -b fox_12.1 device/transsion/mt6789-common
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
